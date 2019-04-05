@@ -30,6 +30,7 @@ include('config.php');
 <body>
 	
 	<?php
+
 	if(isset($_POST['uploadBtn']))
 	{
 		$fileName = $_FILES['myFile']['name'];

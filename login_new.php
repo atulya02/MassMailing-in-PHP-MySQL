@@ -45,9 +45,19 @@
               <input type="text" placeholder="Username" name="Username" class="forms_field-input" required autofocus />
             </div>
             <div class="forms_field">
-              <input type="password" placeholder="Password"  name="Pass" class="forms_field-input" required />
+              <input type="password" placeholder="Password"  name="PassLogin" class="forms_field-input" required />
             </div>
           </fieldset>
+          <div><?php 
+          session_start();
+
+		   if (isset($_SESSION['message']))
+				{
+				    echo $_SESSION['message'];
+				    
+				} ?>
+					
+				</div>
           <div class="forms_buttons">
             <button type="button" class="forms_buttons-forgot">Forgot password?</button>
             <input type="submit" value="Log In" class="forms_buttons-action">
@@ -70,12 +80,7 @@
             <div class="forms_field">
               <input type="password" placeholder="Password" name="Pass" class="forms_field-input" required />
             </div>
-            <div class="forms_field">
-              <input type="text" placeholder="MailJet SMTP" name="mailjetid" class="forms_field-input" required />
-            </div>
-            <div class="forms_field">
-              <input type="password" placeholder="Mailjet HashedPass" name="mailjetpass" class="forms_field-input" required />
-            </div>
+            
           </fieldset>
           <div class="forms_buttons">
             <input type="submit" value="Sign up" class="forms_buttons-action">
@@ -118,3 +123,5 @@ loginButton.addEventListener('click', () => {
         }, 5500);
     })
 </script>
+
+

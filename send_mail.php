@@ -1,6 +1,5 @@
 <?php
 //send_mail.php
-
 if(isset($_POST['email_data']))
 {
 	require 'class/class.phpmailer.php';
@@ -14,7 +13,7 @@ if(isset($_POST['email_data']))
 		$mail->SMTPSecure = 'tls';
 		$mail->Host = 'in-v3.mailjet.com';		//Sets the SMTP hosts of your Email hosting, this for Godaddy
 		
-		$mail->Port = 587;								//Sets the default SMTP server port
+		$mail->Port = 25;								//Sets the default SMTP server port
 		$mail->IsHTML(true);
 		$mail->Username = "2360c7d1cb3c6fee5a83a425f1e56a0b";					//Sets SMTP username
 		$mail->Password = "11ca6bb3dd721069fe4affdb7168f478";					//Sets SMTP password
@@ -32,25 +31,20 @@ if(isset($_POST['email_data']))
 		<p>Quisque dignissim pharetra tortor, sit amet auctor enim euismod at. Sed vitae enim at augue convallis pellentesque. Donec rhoncus nisi et posuere fringilla. Phasellus elementum iaculis convallis. Curabitur laoreet, dui eget lacinia suscipit, quam erat vehicula nulla, non ultrices elit massa eu dolor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vulputate mauris vel ultricies tempor.</p>
 		<p>Mauris est leo, tincidunt sit amet lacinia eget, consequat convallis justo. Morbi sollicitudin purus arcu. Suspendisse pellentesque interdum enim non consectetur. Etiam eleifend pharetra ante a feugiat.</p>
 		';
-
 		$mail->AltBody = '';
-
 		$result = $mail->Send();						//Send an Email. Return true on success or false on error
-
 		if($result["code"] == '400')
 		{
 			$output .= html_entity_decode($result['full_error']);
 		}
-
 	}
 	if($output == '')
 	{
-		echo 'ok';
+		echo 'OK';
 	}
 	else
 	{
 		echo $output;
 	}
 }
-
 ?>

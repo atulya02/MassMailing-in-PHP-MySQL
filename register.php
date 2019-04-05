@@ -7,8 +7,11 @@ $con=mysqli_connect('localhost','root','');
 
 mysqli_select_db($con,'registrationdata');
 
+$fullname=$_POST['name'];
+$email=$_POST['email'];
 $name=$_POST['Username'];
 $pass=$_POST['Pass'];
+$pass=password_hash($pass, PASSWORD_DEFAULT);
 
 $s="select * from userdata where Username='$name'";
 
@@ -20,7 +23,7 @@ if($num==1)
 }
 else
 {
-	$reg="insert into userdata values('$name','$pass')";
+	$reg="insert into userdata values('$fullname','$email','$name','$pass')";
 	mysqli_query($con,$reg);
 	echo "Registration Successful";
 

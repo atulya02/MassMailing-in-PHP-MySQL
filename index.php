@@ -1,12 +1,10 @@
 <?php
 //index.php
-
 $connect = new PDO("mysql:host=localhost;dbname=testing", "root", "");
 $query = "SELECT * FROM customer ORDER BY customer_id";
 $statement = $connect->prepare($query);
 $statement->execute();
 $result = $statement->fetchAll();
-
 ?>
 <!DOCTYPE html>
 <html>
@@ -15,11 +13,51 @@ $result = $statement->fetchAll();
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/loading-bar.js"></script>
+		<style type="text/css">
+			#overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            width: 100vw;
+            z-index: 0;
+        }
+        .ldBar{
+        	position: relative;
+        	top: 30%;
+        }
+        .ldBar-label {
+	    color: #fff;
+	    font-family: tahoma;
+	    font-size: 2.1em;
+	    font-weight: 200;
+	    position: relative;
+	    top: 50%;
+	    left: 50%;
+	    
+	  }
+
+		</style>
+		<link rel="stylesheet" type="text/css" href="css/loading-bar.css">
 	</head>
 	<body>
+		<div id="overlay" style="background: #ddd;">
+		
+			<div class="ldBar" id="myItem1"
+			  style="width:100%;height:100px",
+			  data-stroke="data:ldbar/res,gradient(0,1,#9df,#9fd,#df9,#fd9)",
+			  data-path="M10 20Q20 15 30 20Q40 25 50 20Q60 15 70 20Q80 25 90 20"
+			></div>
+			<script>
+			  var bar1 = new ldBar("#myItem1");
+			  var bar2 = document.getElementById('myItem1').ldBar;
+			  bar1.set(100);
+			</script>
+		</div>
 		<br />
 		<div class="container">
-			<h3 align="center">Send Bulk Email using PHPMailer with Ajax PHP</h3>
+			<h3 align="center">Send Bulk Email </h3>
 			<br />
 			<div class="table-responsive">
 				<table class="table table-bordered table-striped">
@@ -84,7 +122,6 @@ $(document).ready(function(){
 				} 
 			});
 		}
-
 		$.ajax({
 			url:"send_mail.php",
 			method:"POST",
@@ -108,12 +145,13 @@ $(document).ready(function(){
 				$('#'+id).attr('disabled', false);
 			}
 		})
-
 	});
 });
 </script>
-
-
-
-
-
+<script>
+    $(document).ready(function () {
+        setTimeout(function () {
+            $("#overlay").slideUp("");
+        }, 10000);
+    })
+</script>
