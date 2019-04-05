@@ -130,6 +130,7 @@ $(document).ready(function(){
 			beforeSend:function(){
 				$('#'+id).html('Sending...');
 				$('#'+id).addClass('btn-danger');
+
 			},
 			success:function(data){
 				if(data == 'ok')
@@ -141,7 +142,10 @@ $(document).ready(function(){
 				}
 				else
 				{
-					$('#'+id).text(data);
+					$('#'+id).text('Sent');
+					$('#'+id).removeClass('btn-danger');
+					$('#'+id).removeClass('btn-info');
+					$('#'+id).addClass('btn-success');
 				}
 				$('#'+id).attr('disabled', false);
 			}
@@ -153,6 +157,6 @@ $(document).ready(function(){
     $(document).ready(function () {
         setTimeout(function () {
             $("#overlay").slideUp("");
-        }, 10000);
+        }, 1);
     })
 </script>
