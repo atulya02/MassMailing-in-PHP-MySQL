@@ -11,6 +11,7 @@ include('config.php');
 <head>
 	<title>Home</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+     <link rel="icon" type="image/icon" href="images/logo.png"/>
 
      <style type="text/css">
           *{

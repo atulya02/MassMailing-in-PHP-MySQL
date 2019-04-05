@@ -9,11 +9,12 @@ $result = $statement->fetchAll();
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Send Bulk Email using PHPMailer with Ajax PHP</title>
+		<title>Send Bulk Email </title>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="js/loading-bar.js"></script>
+		<link rel="icon" type="image/icon" href="images/logo.png"/>
 		<style type="text/css">
 			#overlay {
             position: fixed;
@@ -42,7 +43,7 @@ $result = $statement->fetchAll();
 		<link rel="stylesheet" type="text/css" href="css/loading-bar.css">
 	</head>
 	<body>
-		<div id="overlay" style="background: #ddd;">
+		<div id="overlay" style="background: #0984e3;">
 		
 			<div class="ldBar" id="myItem1"
 			  style="width:100%;height:100px",
