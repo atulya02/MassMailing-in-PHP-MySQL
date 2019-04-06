@@ -14,7 +14,6 @@ $result = $statement->fetchAll();
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="js/loading-bar.js"></script>
-		<link rel="icon" type="image/icon" href="images/logo.png"/>
 		<style type="text/css">
 			#overlay {
             position: fixed;
@@ -40,6 +39,7 @@ $result = $statement->fetchAll();
 	  }
 
 		</style>
+		<link rel="icon" type="image/icon" href="images/logo.png"/>
 		<link rel="stylesheet" type="text/css" href="css/loading-bar.css">
 	</head>
 	<body>
@@ -130,7 +130,6 @@ $(document).ready(function(){
 			beforeSend:function(){
 				$('#'+id).html('Sending...');
 				$('#'+id).addClass('btn-danger');
-
 			},
 			success:function(data){
 				if(data == 'ok')
@@ -142,7 +141,8 @@ $(document).ready(function(){
 				}
 				else
 				{
-					$('#'+id).text('Sent');
+					
+					$('#'+id).text('Success');
 					$('#'+id).removeClass('btn-danger');
 					$('#'+id).removeClass('btn-info');
 					$('#'+id).addClass('btn-success');
@@ -157,6 +157,6 @@ $(document).ready(function(){
     $(document).ready(function () {
         setTimeout(function () {
             $("#overlay").slideUp("");
-        }, 1);
+        }, 10000);
     })
 </script>
