@@ -19,7 +19,7 @@ if(isset($_POST['email_data']))
 		$mail->Password = "11ca6bb3dd721069fe4affdb7168f478";					//Sets SMTP password
 		$mail->SMTPSecure = '';							//Sets connection prefix. Options are "", "ssl" or "tls"
 		$mail->setFrom('atulya.raj2904@gmail.com');			//Sets the From email address for the message
-		$mail->FromName = 'Testing';					//Sets the From name of the message
+		$mail->FromName = 'Atulya';					//Sets the From name of the message
 		$mail->addAddress($row["email"], $row["name"]);	//Adds a "To" address
 		$mail->WordWrap = 50;							//Sets word wrapping on the body of the message to a given number of characters
 		$mail->IsHTML(true);							//Sets message type to HTML
