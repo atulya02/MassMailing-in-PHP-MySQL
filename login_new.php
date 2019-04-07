@@ -37,7 +37,7 @@
       </div>
     </div>
     
-    <div class="user_options-forms" id="user_options-forms">
+    <div class="user_options-forms" id="user_options-forms" style="height: 500px;">
       <div class="user_forms-login">
         <h2 class="forms_title">Login</h2>
         <form class="forms_form" action="validation.php" method="post">
